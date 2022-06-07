@@ -10,6 +10,6 @@ spec:
     labelSelectors:
       app: cartservice
   mode: all
-  duration: '30s'
+  duration: '60s'
   action: pod-kill
   gracePeriod: 0
