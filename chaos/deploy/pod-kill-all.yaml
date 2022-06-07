@@ -2,7 +2,7 @@ kind: PodChaos
 apiVersion: chaos-mesh.org/v1alpha1
 metadata:
   namespace: default
-  name: cart-pod-kill-7
+  name: cart-pod-kill-8
 spec:
   selector:
     namespaces:
