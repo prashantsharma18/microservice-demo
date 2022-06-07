@@ -1,0 +1,22 @@
+kind: NetworkChaos
+apiVersion: chaos-mesh.org/v1alpha1
+metadata:
+  namespace: default
+  name: network-part-checkout-payment
+spec:
+  selector:
+    namespaces:
+      - default
+    labelSelectors:
+      app: checkoutservice
+  mode: all
+  action: partition
+  duration: 60s
+  direction: to
+  target:
+    selector:
+      namespaces:
+        - default
+      labelSelectors:
+        app: paymentservice
+    mode: all

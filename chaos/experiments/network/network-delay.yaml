@@ -1,0 +1,24 @@
+kind: NetworkChaos
+apiVersion: chaos-mesh.org/v1alpha1
+metadata:
+  namespace: default
+  name: network-delay
+spec:
+  selector:
+    namespaces:
+      - default
+    labelSelectors:
+      app: cartservice
+  mode: all
+  action: delay
+  duration: 60s
+  delay:
+    latency: 30ms
+    correlation: '100'
+    jitter: 0ms
+  direction: to
+  target:
+    selector:
+      namespaces:
+        - default
+    mode: one

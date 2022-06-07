@@ -1,0 +1,17 @@
+kind: StressChaos
+apiVersion: chaos-mesh.org/v1alpha1
+metadata:
+  namespace: default
+  name: stress-product-fail5
+spec:
+  selector:
+    namespaces:
+      - default
+    labelSelectors:
+      app: productcatalogservice
+  mode: all
+  stressors:
+    cpu:
+      workers: 5
+      load: 60
+  duration: 3m

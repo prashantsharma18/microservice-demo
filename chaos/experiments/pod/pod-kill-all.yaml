@@ -1,0 +1,15 @@
+kind: PodChaos
+apiVersion: chaos-mesh.org/v1alpha1
+metadata:
+  namespace: default
+  name: cart-pod-kill-7
+spec:
+  selector:
+    namespaces:
+      - default
+    labelSelectors:
+      app: cartservice
+  mode: all
+  duration: '30s'
+  action: pod-kill
+  gracePeriod: 0
